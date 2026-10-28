@@ -1,0 +1,697 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>¿Qué perfume usas? | Elige perfumes que los demás noten</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Cómo elegir perfumes que los demás noten. Un método para entender qué hueles, entrenar tu nariz y armar tus 3 perfumes con universales, de nicho y árabes. Pago único.">
+<meta property="og:title" content="¿Qué perfume usas?">
+<meta property="og:description" content="Cómo elegir perfumes que los demás noten (y que no desaparezcan a las 3 horas).">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://perfume-con-criterio.impultienda.ar/">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Google+Sans:ital,wght@0,400;0,500;0,600;1,400&family=Newsreader:ital,opsz,wght@1,6..72,400&display=swap">
+<style>
+/* Sistema de diseño de la colección de perfumería, edición hombres, llevado a la web.
+   Grafito con luz dorada, tarjetas con tres alturas, frascos reales, Cabinet Grotesk 700 con una palabra en Newsreader itálica. */
+@font-face{font-family:"Cabinet Grotesk";src:url("https://anuncios-listos-beauty.netlify.app/fonts/CabinetGrotesk-Variable.woff2") format("woff2");font-weight:100 900;font-display:swap}
+:root{
+  color-scheme:dark;
+  --bg-0:#0E1013;--bg-1:#171A1F;--bg-2:#242931;
+  --ink:#F2EDE4;--ink-2:#B5AEA3;--ink-3:#8A847A;--ink-dark:#15130F;
+  --accent:#D2AD72;--glow:210,173,114;
+  --line:rgba(255,255,255,.08);
+  --f-citrica:#EFC94F;--f-fresca:#5FB7CF;--f-aromatica:#9A9DE3;--f-floral:#D98AA8;--f-chipre:#93A45C;--f-amaderada:#B5875A;--f-ambar:#EBA247;--f-gourmand:#C9694A;--f-cuero:#9B6A93;
+  --font-display:"Cabinet Grotesk","Helvetica Neue",Arial,sans-serif;
+  --font-text:"Google Sans",system-ui,-apple-system,sans-serif;
+  --font-accent:"Newsreader",Georgia,serif;
+  --r-card:22px;--r-pill:999px;
+  --elev-1:0 10px 24px -16px rgba(0,0,0,.45);
+  --elev-2:0 16px 32px -20px rgba(0,0,0,.5);
+  --elev-3:0 1px 0 rgba(255,255,255,.08) inset,0 28px 50px -28px rgba(0,0,0,.6);
+  --ease:cubic-bezier(.22,1,.36,1);
+  --w:1040px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{background:var(--bg-0);scroll-behavior:smooth}
+body{font-family:var(--font-text);font-size:17px;line-height:1.55;color:var(--ink);background:var(--bg-0);-webkit-font-smoothing:antialiased;overflow-x:hidden;text-wrap:pretty}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+::selection{background:rgba(var(--glow),.35)}
+
+/* Fondo */
+.bd{position:fixed;inset:0;z-index:-2;overflow:hidden;background:linear-gradient(180deg,var(--bg-1),var(--bg-0) 60%);pointer-events:none}
+.bd i{position:absolute;border-radius:50%;background:radial-gradient(circle,rgba(var(--glow),.16) 0%,rgba(var(--glow),.05) 40%,transparent 68%);will-change:transform}
+.bd i:nth-child(1){width:900px;height:900px;right:-300px;top:-260px;animation:drift 18s var(--ease) infinite alternate}
+.bd i:nth-child(2){width:700px;height:700px;left:-320px;top:60vh;animation:drift 22s var(--ease) infinite alternate-reverse}
+.bd i:nth-child(3){width:600px;height:600px;right:-200px;top:150vh;opacity:.7;animation:drift 20s var(--ease) infinite alternate}
+.bd .grain{position:absolute;inset:0;opacity:.08;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='200' height='200' filter='url(%23n)'/></svg>")}
+@keyframes drift{from{transform:translate(0,0) scale(1)}to{transform:translate(-60px,50px) scale(1.12)}}
+@keyframes float{0%,100%{transform:translateY(0) rotate(var(--rot,0deg))}50%{transform:translateY(-12px) rotate(var(--rot,0deg))}}
+@keyframes shine{from{transform:translateX(-120%) skewX(-18deg)}to{transform:translateX(220%) skewX(-18deg)}}
+@keyframes marquee{to{transform:translateX(-50%)}}
+@keyframes marquee-r{from{transform:translateX(-50%)}to{transform:translateX(0)}}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(var(--glow),.35)}70%{box-shadow:0 0 0 14px rgba(var(--glow),0)}}
+@keyframes entra{from{opacity:0;transform:translateY(26px) scale(.94) rotate(var(--rot,0deg))}to{opacity:1;transform:translateY(0) scale(1) rotate(var(--rot,0deg))}}
+@keyframes entraFicha{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+
+/* Tipografía */
+h1,h2,h3{font-family:var(--font-display);font-weight:700;color:var(--ink);text-wrap:balance}
+h1{font-size:clamp(40px,6.6vw,78px);letter-spacing:-.04em;line-height:.94}
+h2{font-size:clamp(32px,4.6vw,54px);letter-spacing:-.035em;line-height:.98}
+h3{font-size:clamp(20px,2.2vw,24px);letter-spacing:-.02em;line-height:1.1}
+h1 em,h2 em,h3 em{font-family:var(--font-accent);font-style:italic;font-weight:400;font-size:1.06em;letter-spacing:-.01em;color:var(--accent)}
+.label{font-size:13px;font-weight:500;color:var(--ink-3)}
+.lead{font-size:clamp(17px,1.9vw,20px);line-height:1.45;color:var(--ink-2);max-width:42ch}
+.sub{font-size:16px;color:var(--ink-2);max-width:56ch}
+.small{font-size:14px;color:var(--ink-2)}
+.paren{display:block;margin-top:12px;font-family:var(--font-accent);font-style:italic;font-weight:400;font-size:clamp(20px,2.5vw,27px);line-height:1.2;letter-spacing:-.01em;color:var(--ink-2)}
+.num{font-family:var(--font-display);font-weight:700;letter-spacing:-.04em;color:var(--accent)}
+
+/* Capa y secciones */
+.wrap>*{min-width:0}
+.wrap{max-width:var(--w);margin:0 auto;padding-left:max(18px,env(safe-area-inset-left));padding-right:max(18px,env(safe-area-inset-right))}
+section{position:relative;padding:84px 0}
+@media (max-width:720px){section{padding:60px 0}}
+.head{max-width:640px;margin-bottom:32px}
+.head .label{margin-bottom:12px;display:flex;align-items:center;gap:10px}
+.head .label::before{content:"";width:22px;height:1px;background:linear-gradient(90deg,var(--accent),transparent)}
+.head .sub{margin-top:14px}
+
+/* Tarjetas */
+.card{position:relative;border-radius:var(--r-card);padding:24px;background:linear-gradient(170deg,rgba(255,255,255,.06),rgba(255,255,255,.025));border:1px solid rgba(255,255,255,.09);box-shadow:var(--elev-2);min-width:0}
+.card.flat{background:rgba(255,255,255,.04);border-color:rgba(255,255,255,.08);box-shadow:var(--elev-1)}
+.card.lift{background:linear-gradient(170deg,rgba(255,255,255,.08),rgba(255,255,255,.03));border-color:rgba(255,255,255,.10);box-shadow:var(--elev-3)}
+.card.note{background:rgba(var(--glow),.06);border-color:rgba(var(--glow),.30);box-shadow:none}
+.card.hover{transition:transform .5s var(--ease),border-color .5s var(--ease)}
+.card.hover:hover{transform:translateY(-6px);border-color:rgba(var(--glow),.35)}
+
+/* Botones y pastillas */
+.btn{position:relative;display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:18px 28px;border-radius:var(--r-pill);font-weight:600;font-size:17px;color:var(--ink-dark);background:linear-gradient(180deg,#E3C48F,var(--accent));box-shadow:0 1px 0 rgba(255,255,255,.35) inset,0 18px 40px -16px rgba(var(--glow),.7);overflow:hidden;transition:transform .35s var(--ease),box-shadow .35s var(--ease);white-space:nowrap}
+.btn::after{content:"";position:absolute;top:0;bottom:0;width:40%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.45),transparent);animation:shine 3.2s var(--ease) infinite}
+.btn:hover{transform:translateY(-2px);box-shadow:0 1px 0 rgba(255,255,255,.35) inset,0 24px 50px -16px rgba(var(--glow),.85)}
+.btn .arr{display:inline-block;transition:transform .35s var(--ease)}
+.btn:hover .arr{transform:translateX(4px)}
+.cta{display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+.cta .tach{font-size:14px;color:var(--ink-3)}
+.pill{display:inline-flex;align-items:center;gap:8px;padding:7px 13px;border-radius:var(--r-pill);font-size:13px;font-weight:600;background:rgba(255,255,255,.06);border:1px solid var(--line);white-space:nowrap}
+.pill.gold{border-color:rgba(var(--glow),.4);color:var(--accent)}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--c,var(--accent));box-shadow:0 0 14px color-mix(in srgb,var(--c,var(--accent)) 70%,transparent)}
+.micro{font-size:13px;color:var(--ink-3)}
+
+/* Barra superior */
+.nav{position:sticky;top:0;z-index:30;background:rgba(14,16,19,.6);backdrop-filter:blur(16px) saturate(1.3);-webkit-backdrop-filter:blur(16px) saturate(1.3);border-bottom:1px solid var(--line)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:62px}
+.brand{font-family:var(--font-display);font-weight:700;letter-spacing:-.02em;font-size:18px}
+.brand em{font-family:var(--font-accent);font-style:italic;font-weight:400;color:var(--accent);font-size:1.08em}
+.nav .btn{padding:11px 18px;font-size:14px}
+
+/* Hero */
+.hero{padding:56px 0 30px;overflow:hidden}
+.hero .wrap{display:grid;grid-template-columns:1fr 1fr;gap:36px;align-items:center;width:100%}
+.hero .txt{position:relative;z-index:2;min-width:0}
+.hero .txt>.label{display:inline-flex;align-items:center;gap:10px;padding:8px 14px;border-radius:var(--r-pill);border:1px solid rgba(var(--glow),.35);background:rgba(var(--glow),.06);color:var(--accent)}
+.hero h1{margin-top:20px}
+.hero .lead{margin-top:22px}
+.hero .cta{margin-top:30px}
+.hero .micro{margin-top:12px}
+.stats{display:flex;flex-wrap:wrap;gap:8px 22px;margin-top:30px;padding-top:20px;border-top:1px solid var(--line)}
+.stats div{display:flex;align-items:baseline;gap:6px;font-size:13px;color:var(--ink-3)}
+.stats .num{font-size:22px;line-height:1}
+
+/* Carrusel de frascos: cada slide trae su frasco y su ficha con datos de la guía */
+.scene{position:relative;display:grid;grid-template-rows:380px auto;gap:14px}
+.scene .ghost{position:absolute;right:-10px;top:-30px;font-family:var(--font-display);font-weight:700;font-size:300px;line-height:.8;letter-spacing:-.06em;color:transparent;-webkit-text-stroke:1.2px rgba(242,237,228,.10);user-select:none;pointer-events:none}
+.scene .glow{position:absolute;left:50%;top:180px;width:520px;height:520px;transform:translate(-50%,-50%);border-radius:50%;background:radial-gradient(circle,rgba(var(--glow),.22),rgba(var(--glow),.06) 40%,transparent 68%);pointer-events:none}
+.stage{position:relative;height:380px}
+.stage .luz{position:absolute;left:50%;bottom:8px;width:280px;height:48px;transform:translateX(-50%);border-radius:50%;filter:blur(10px);background:radial-gradient(ellipse,rgba(var(--glow),.45),transparent 70%)}
+.slide{position:absolute;inset:0;display:none;align-items:flex-end;justify-content:center}
+.slide.on{display:flex}
+.slide .frasco{height:340px;width:auto;filter:drop-shadow(0 34px 38px rgba(0,0,0,.6));-webkit-mask-image:linear-gradient(#000 88%,transparent 98%);mask-image:linear-gradient(#000 88%,transparent 98%);--rot:4deg;animation:entra .9s var(--ease) both,float 7s ease-in-out .9s infinite;will-change:transform}
+.ficha{position:relative;z-index:3;min-height:150px}
+.ficha .f{display:none;animation:entraFicha .7s var(--ease) both}
+.ficha .f.on{display:block}
+.f .top{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap}
+.f .nombre{font-family:var(--font-display);font-weight:700;font-size:20px;letter-spacing:-.02em;margin-top:10px}
+.f .mundo{font-size:12.5px;color:var(--ink-3)}
+.notas{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
+.nota{display:inline-flex;align-items:center;gap:6px;padding:5px 10px 5px 6px;border-radius:var(--r-pill);background:rgba(255,255,255,.05);border:1px solid var(--line);font-size:12.5px;color:var(--ink)}
+.nota svg{width:18px;height:18px;flex:none;color:var(--c)}
+.par{display:grid;grid-template-columns:44px 1fr;gap:12px;align-items:center;margin-top:14px;padding-top:12px;border-top:1px solid var(--line)}
+.par .th{width:44px;height:56px;display:grid;place-items:center;border-radius:10px;background:rgba(255,255,255,.04)}
+.par .th img{height:48px;width:auto;filter:drop-shadow(0 6px 8px rgba(0,0,0,.5))}
+.par b{display:block;font-weight:600;font-size:14px}
+.par span{display:block;font-size:12.5px;color:var(--ink-2);margin-top:2px}
+.par .tag{display:inline-block;margin-left:6px;padding:1px 7px;border-radius:var(--r-pill);font-size:11px;font-weight:600;color:var(--accent);border:1px solid rgba(var(--glow),.4);vertical-align:middle;font-style:normal}
+.thumbs{display:flex;gap:8px;justify-content:center;align-items:flex-end;margin-top:4px}
+.thumbs button{position:relative;width:58px;height:64px;border:1px solid var(--line);border-radius:12px;background:rgba(255,255,255,.03);cursor:pointer;display:grid;place-items:center;padding:0;transition:border-color .4s var(--ease),transform .4s var(--ease);overflow:hidden}
+.thumbs button img{height:50px;width:auto;opacity:.55;transition:opacity .4s var(--ease),transform .4s var(--ease)}
+.thumbs button.on{border-color:rgba(var(--glow),.6);transform:translateY(-3px)}
+.thumbs button.on img{opacity:1;transform:scale(1.06)}
+.thumbs button i{position:absolute;left:0;bottom:0;height:2px;width:0;background:var(--accent)}
+.thumbs button.on i{animation:barra 5s linear forwards}
+@keyframes barra{to{width:100%}}
+@media (max-width:900px){
+  .hero{padding-top:36px}
+  .hero .wrap{grid-template-columns:1fr;gap:18px}
+  .scene{grid-template-rows:300px auto;margin-top:10px}
+  .stage{height:300px}
+  .slide .frasco{height:270px}
+  .scene .ghost{font-size:220px;right:-10px;top:-20px}
+  .scene .glow{width:420px;height:420px;top:150px}
+  .thumbs button{width:52px;height:58px}
+}
+
+/* Franja de familias */
+.franja{overflow:hidden;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.franja .track{display:flex;width:max-content;padding:14px 0;animation:marquee 40s linear infinite}
+.franja .fam{display:flex;align-items:center;gap:12px;margin-right:52px;white-space:nowrap;font-size:14px;color:var(--ink-2)}
+.franja .ico{width:38px;height:38px;object-fit:contain;flex:none;filter:drop-shadow(0 8px 12px rgba(0,0,0,.5))}
+.orb{width:28px;height:28px;border-radius:50%;background:linear-gradient(165deg,color-mix(in srgb,var(--c) 72%,#fff) 0%,var(--c) 52%,color-mix(in srgb,var(--c) 90%,#000) 100%);box-shadow:inset 0 4px 7px rgba(255,255,255,.35),inset 0 -3px 6px rgba(0,0,0,.08),0 0 0 6px color-mix(in srgb,var(--c) 14%,transparent),0 12px 26px -10px color-mix(in srgb,var(--c) 55%,transparent)}
+
+/* Dolores */
+.dolores{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.dolor{padding:22px}
+.dolor .q{font-family:var(--font-accent);font-style:italic;font-size:clamp(20px,2vw,23px);line-height:1.2;color:var(--ink)}
+.dolor .q::before{content:"\201C";color:var(--accent)}
+.dolor .q::after{content:"\201D";color:var(--accent)}
+.dolor p{margin-top:10px;font-size:14px;color:var(--ink-2)}
+.dolor .mark{width:8px;height:8px;border-radius:50%;background:var(--accent);box-shadow:0 0 16px rgba(var(--glow),.7);margin-bottom:16px}
+.cierre{margin-top:30px;display:grid;gap:8px}
+.cierre .q{font-family:var(--font-accent);font-style:italic;font-size:clamp(23px,2.8vw,32px);line-height:1.15;color:var(--ink);max-width:30ch}
+@media (max-width:900px){.dolores{grid-template-columns:1fr 1fr}}
+@media (max-width:560px){.dolores{grid-template-columns:1fr}}
+
+/* Beneficios */
+.benef{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.benef .card{padding:26px;overflow:hidden}
+.benef .n{position:absolute;right:14px;top:-16px;font-family:var(--font-display);font-weight:700;font-size:130px;line-height:1;letter-spacing:-.06em;color:transparent;-webkit-text-stroke:1.2px rgba(242,237,228,.12);pointer-events:none}
+.benef h3{position:relative;max-width:18ch}
+.benef p{position:relative;margin-top:10px;color:var(--ink-2);font-size:15px;max-width:42ch}
+@media (max-width:720px){.benef{grid-template-columns:1fr}}
+
+/* Producto */
+.galeria{position:relative;margin:0 -18px;overflow:hidden;padding:20px 0;-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
+.galeria .row{display:flex;width:max-content;animation:marquee 60s linear infinite}
+.galeria .row.r{animation:marquee-r 70s linear infinite;margin-top:16px}
+.galeria:hover .row{animation-play-state:paused}
+.pag{flex:none;width:220px;margin-right:16px;border-radius:14px;overflow:hidden;border:1px solid rgba(255,255,255,.12);box-shadow:var(--elev-3);transform:rotate(var(--r,0deg));transition:transform .6s var(--ease)}
+.pag:hover{transform:rotate(0) scale(1.04)}
+.pag img{width:100%;height:auto}
+@media (max-width:720px){.pag{width:170px}}
+.caps{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:30px}
+.cap{display:grid;grid-template-columns:38px 1fr;gap:12px;padding:16px 20px;align-items:start}
+.cap .num{font-size:26px;line-height:1}
+.cap b{display:block;font-family:var(--font-display);font-weight:700;font-size:18px;letter-spacing:-.02em}
+.cap span{display:block;margin-top:3px;font-size:14px;color:var(--ink-2)}
+@media (max-width:720px){.caps{grid-template-columns:1fr}}
+
+/* Bonos */
+.bonos{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.bono{padding:0;overflow:hidden;display:grid;grid-template-rows:210px auto}
+.bono .vis{position:relative;overflow:hidden;background:radial-gradient(80% 70% at 50% 100%,rgba(var(--glow),.18),transparent 70%),linear-gradient(180deg,rgba(255,255,255,.03),transparent)}
+.bono .vis img{position:absolute;height:195px;width:auto;filter:drop-shadow(0 20px 26px rgba(0,0,0,.55));-webkit-mask-image:linear-gradient(#000 86%,transparent 97%);mask-image:linear-gradient(#000 86%,transparent 97%);transition:transform .8s var(--ease)}
+.bono:hover .vis img{transform:translateY(-8px)}
+.bono .vis .eq{position:absolute;left:50%;top:46%;transform:translate(-50%,-50%);font-family:var(--font-display);font-weight:700;font-size:44px;color:var(--accent);z-index:2}
+.bono .txt{padding:20px 24px 24px}
+.bono .top{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap}
+.bono .gratis{display:inline-flex;align-items:center;gap:10px;font-weight:600;color:var(--accent)}
+.bono .gratis s{color:var(--ink-3);font-weight:400;font-size:14px}
+.bono h3{margin-top:12px}
+.bono p{margin-top:8px;font-size:14.5px;color:var(--ink-2)}
+@media (max-width:760px){.bonos{grid-template-columns:1fr}}
+
+/* Oferta */
+.oferta{display:grid;grid-template-columns:1.1fr .9fr;gap:16px;align-items:stretch}
+.oferta .lista{padding:26px}
+.oferta .fila{display:flex;justify-content:space-between;gap:14px;padding:12px 0;border-top:1px solid var(--line);align-items:center}
+.oferta .fila:first-of-type{border-top:0;padding-top:0}
+.oferta .fila b{font-weight:600;display:block;font-size:15.5px}
+.oferta .fila span{font-size:13px;color:var(--ink-3)}
+.oferta .fila .pr{text-align:right;white-space:nowrap}
+.oferta .fila .pr s{color:var(--ink-3);font-size:14px;margin-right:6px}
+.oferta .fila .pr em{font-style:normal;color:var(--accent);font-weight:600}
+.oferta .total{margin-top:6px;padding-top:16px;border-top:1px solid rgba(var(--glow),.4);display:flex;justify-content:space-between;align-items:baseline}
+.oferta .total s{color:var(--ink-3)}
+.oferta .total .num{font-size:30px}
+.pago{padding:30px;display:flex;flex-direction:column;justify-content:center;text-align:center;overflow:hidden}
+.pago .ring{position:absolute;inset:-1px;border-radius:inherit;padding:1.5px;pointer-events:none;background:conic-gradient(from var(--ang,0deg),rgba(255,255,255,.08),var(--accent) 22%,rgba(255,255,255,.7) 36%,rgba(255,255,255,.08) 55%,rgba(var(--glow),.6) 80%,rgba(255,255,255,.08));-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;animation:spin 7s linear infinite}
+@property --ang{syntax:"<angle>";inherits:false;initial-value:0deg}
+@keyframes spin{to{--ang:360deg}}
+.pago .big{font-family:var(--font-display);font-weight:700;font-size:clamp(54px,7vw,76px);letter-spacing:-.05em;line-height:.9;margin-top:8px}
+.pago .tach{font-size:17px;color:var(--ink-3)}
+.pago .btn{margin:20px auto 0;width:100%;max-width:340px}
+.pago ul{list-style:none;margin-top:18px;display:grid;gap:6px;text-align:left;width:fit-content;margin-inline:auto}
+.pago li{display:flex;gap:10px;align-items:center;font-size:14px;color:var(--ink-2)}
+.pago li::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--accent);box-shadow:0 0 10px rgba(var(--glow),.7)}
+@media (max-width:820px){.oferta{grid-template-columns:1fr}}
+
+/* Fuentes y garantía */
+.confianza{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.logos{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.logos span{padding:8px 14px;border-radius:var(--r-pill);border:1px solid var(--line);background:rgba(255,255,255,.04);font-family:var(--font-display);font-weight:700;font-size:14px;letter-spacing:-.01em}
+.gar{display:grid;grid-template-columns:120px 1fr;gap:22px;align-items:center}
+.sello{width:120px;height:120px;border-radius:50%;display:grid;place-items:center;text-align:center;background:linear-gradient(165deg,#E6CB98,var(--accent) 55%,#A8864F);color:var(--ink-dark);box-shadow:inset 0 6px 10px rgba(255,255,255,.35),0 0 0 10px rgba(var(--glow),.12),0 20px 40px -14px rgba(var(--glow),.6);animation:pulse 3s infinite}
+.sello b{font-family:var(--font-display);font-weight:700;font-size:40px;letter-spacing:-.05em;line-height:.9;display:block}
+.sello span{font-size:11.5px;font-weight:600;display:block;margin-top:3px}
+@media (max-width:760px){.confianza{grid-template-columns:1fr}}
+@media (max-width:480px){.gar{grid-template-columns:1fr;justify-items:center;text-align:center}}
+
+/* Preguntas */
+.faq{display:grid;gap:8px;max-width:760px}
+details{border-radius:16px;background:rgba(255,255,255,.04);border:1px solid var(--line);padding:0 20px;transition:border-color .4s var(--ease)}
+details[open]{border-color:rgba(var(--glow),.35)}
+summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:16px 0;font-weight:600;font-size:16px}
+summary::-webkit-details-marker{display:none}
+summary i{flex:none;width:26px;height:26px;border-radius:50%;border:1px solid var(--line);display:grid;place-items:center;font-style:normal;color:var(--accent);transition:transform .4s var(--ease)}
+details[open] summary i{transform:rotate(45deg)}
+details p{padding:0 0 18px;color:var(--ink-2);font-size:15px;max-width:60ch}
+
+/* Final */
+.final{text-align:center;padding-bottom:120px}
+.final .scene2{position:relative;height:300px;margin-bottom:8px}
+.final .scene2 img{position:absolute;left:50%;height:240px;width:auto;filter:drop-shadow(0 30px 34px rgba(0,0,0,.6));-webkit-mask-image:linear-gradient(#000 86%,transparent 97%);mask-image:linear-gradient(#000 86%,transparent 97%)}
+.final .scene2 .a{margin-left:-215px;top:30px;--rot:-10deg;animation:float 8s ease-in-out infinite;opacity:.9}
+.final .scene2 .b{margin-left:-75px;top:0;height:280px;--rot:3deg;animation:float 7s ease-in-out infinite .8s;z-index:2}
+.final .scene2 .c{margin-left:95px;top:40px;--rot:11deg;animation:float 9s ease-in-out infinite .3s;opacity:.9}
+.final .scene2 .glow{position:absolute;left:50%;top:50%;width:500px;height:500px;transform:translate(-50%,-50%);border-radius:50%;background:radial-gradient(circle,rgba(var(--glow),.2),transparent 65%)}
+.final h2{max-width:16ch;margin:0 auto}
+.final .sub{margin:16px auto 0}
+.final .cta{justify-content:center;margin-top:26px}
+.pie{border-top:1px solid var(--line);padding:24px 0 100px;font-size:13px;color:var(--ink-3);display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
+
+/* Barra fija */
+.sticky{position:fixed;left:0;right:0;bottom:0;z-index:40;padding:10px max(16px,env(safe-area-inset-right)) max(10px,env(safe-area-inset-bottom)) max(16px,env(safe-area-inset-left));background:rgba(14,16,19,.78);backdrop-filter:blur(18px) saturate(1.3);-webkit-backdrop-filter:blur(18px) saturate(1.3);border-top:1px solid var(--line);transform:translateY(110%);transition:transform .6s var(--ease)}
+.sticky.on{transform:none}
+.sticky .in{max-width:var(--w);margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:14px}
+.sticky .p{display:flex;align-items:baseline;gap:8px;font-size:14px;color:var(--ink-2)}
+.sticky .p b{font-family:var(--font-display);font-weight:700;font-size:22px;letter-spacing:-.03em;color:var(--ink)}
+.sticky .btn{padding:13px 22px;font-size:15px}
+
+/* Aparición al hacer scroll */
+.rv{opacity:0;transform:translateY(22px);transition:opacity .9s var(--ease),transform .9s var(--ease)}
+.rv.in{opacity:1;transform:none}
+.rv.d1{transition-delay:.08s}.rv.d2{transition-delay:.16s}.rv.d3{transition-delay:.24s}.rv.d4{transition-delay:.32s}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<div class="bd" aria-hidden="true"><i></i><i></i><i></i><div class="grain"></div></div>
+
+<!-- Íconos de notas: trazo simple, color de la familia -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-citrico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><circle cx="12" cy="12" r="8.5"/><path d="M12 3.5v17M3.5 12h17M6 6l12 12M18 6L6 18"/></symbol>
+  <symbol id="i-fruta" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M12 7c-2-2-5.5-1.5-7 1.2C3 11.5 5 18 8 20c1.3.9 2.6.2 4 .2s2.7.7 4-.2c3-2 5-8.5 3-11.8C17.5 5.5 14 5 12 7z"/><path d="M12 7c0-2 1-3.5 2.5-4.5"/></symbol>
+  <symbol id="i-madera" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><ellipse cx="8" cy="12" rx="4" ry="6"/><path d="M8 6h9c2.2 0 4 2.7 4 6s-1.8 6-4 6H8"/><ellipse cx="8" cy="12" rx="1.5" ry="2.5"/></symbol>
+  <symbol id="i-ambar" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M12 3c3 4.5 6.5 8 6.5 12a6.5 6.5 0 0 1-13 0C5.5 11 9 7.5 12 3z"/><path d="M9 15.5c.2 1.5 1.2 2.6 2.6 3"/></symbol>
+  <symbol id="i-vainilla" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M5 19C6 11 11 6 19 5c-1 8-6 13-14 14z"/><path d="M6.5 17.5L17 7"/></symbol>
+  <symbol id="i-especia" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.8 5.2L19 7l-3.2 4.3L19 17l-5.2-1.2L12 21l-1.8-5.2L5 17l3.2-5.7L5 7l5.2 1.2z"/></symbol>
+  <symbol id="i-hierba" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M12 21V9"/><path d="M12 9c-3 0-5-2-5-5 3 0 5 2 5 5zM12 13c-3 0-5-2-5-5"/><path d="M12 9c3 0 5-2 5-5-3 0-5 2-5 5zM12 13c3 0 5-2 5-5"/><path d="M12 17c-3 0-5-2-5-5M12 17c3 0 5-2 5-5"/></symbol>
+  <symbol id="i-humo" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M12 21c-3-3 3-5 0-8s3-5 0-8"/><path d="M7 20c-2-2 2-3.5 0-6M17 20c2-2-2-3.5 0-6"/></symbol>
+  <symbol id="i-almizcle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><circle cx="12" cy="12" r="7.5"/><circle cx="12" cy="12" r="2.2"/><circle cx="12" cy="4" r=".6"/><circle cx="12" cy="20" r=".6"/><circle cx="4" cy="12" r=".6"/><circle cx="20" cy="12" r=".6"/></symbol>
+  <symbol id="i-musgo" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M3 18c1-4 3-6 5-6s3 2 4 2 2-5 5-5 4 5 4 9"/><path d="M3 18h18"/></symbol>
+  <symbol id="i-dulce" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><rect x="7" y="8" width="10" height="8" rx="4"/><path d="M7 12H3l2-2-2-2M17 12h4l-2 2 2 2"/></symbol>
+</svg>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="#top">¿Qué perfume <em>usas</em>?</a>
+    <a class="btn" href="/checkout">Comprar la guía <span class="arr">→</span></a>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- 1. Promesa -->
+<section class="hero">
+  <div class="wrap">
+    <div class="txt">
+      <span class="label"><span class="dot"></span>Para hombres que quieren que su perfume se note</span>
+      <h1>Cómo elegir perfumes que los demás <em>noten</em></h1>
+      <span class="paren">(y que no desaparezcan a las 3 horas)</span>
+      <p class="lead">Entiende qué estás oliendo, entrena tu nariz con cosas de tu cocina y arma tus 3 perfumes: uno para todos los días, uno versátil y uno para una ocasión. Con universales, de nicho y árabes.</p>
+      <div class="cta">
+        <a class="btn" href="/checkout">Quiero la guía por {{price}} <span class="arr">→</span></a>
+        <span class="tach">antes {{original_price}}</span>
+      </div>
+      <p class="micro">Pago único. Lo recibes por email y lo lees en el celular. Con 2 bonos gratis.</p>
+      <div class="stats">
+        <div><span class="num">64</span>páginas</div>
+        <div><span class="num">54</span>notas explicadas</div>
+        <div><span class="num">45</span>perfumes de referencia</div>
+        <div><span class="num">3</span>mundos: universal, nicho y árabe</div>
+      </div>
+    </div>
+
+    <div class="scene" id="scene">
+      <div class="ghost" id="ghost" aria-hidden="true">01</div>
+      <div class="glow" aria-hidden="true"></div>
+      <div class="stage">
+        <div class="luz" aria-hidden="true"></div>
+        <figure class="slide on"><img class="frasco" src="https://aekpgsbqjzqntlbucbts.supabase.co/storage/v1/object/public/store-resources/13809f29-0dd0-4ac2-a5cf-1285edf2ad83/1793201661336_dior-sauvage-edt-7e3eff78.webp" alt="Dior Sauvage" style="--rot:4deg"></figure>
+        <figure class="slide"><img class="frasco" src="https://aekpgsbqjzqntlbucbts.supabase.co/storage/v1/object/public/store-resources/13809f29-0dd0-4ac2-a5cf-1285edf2ad83/1793201665869_creed-aventus-edp-59fc8e6d.webp" alt="Creed Aventus" style="--rot:-5deg"></figure>
+        <figure class="slide"><img class="frasco" src="https://aekpgsbqjzqntlbucbts.supabase.co/storage/v1/object/public/store-resources/13809f29-0dd0-4ac2-a5cf-1285edf2ad83/1793201675511_chanel-bleu-de-chanel-edp-21d04f44.webp" alt="Bleu de Chanel" style="--rot:5deg"></figure>
+        <figure class="slide"><img class="frasco" src="https://aekpgsbqjzqntlbucbts.supabase.co/storage/v1/object/public/store-resources/13809f29-0dd0-4ac2-a5cf-1285edf2ad83/1793201679843_lattafa-khamrah-edp-635633eb.webp" alt="Lattafa Khamrah" style="--rot:-4deg"></figure>
+        <figure class="slide"><img class="frasco" src="https://aekpgsbqjzqntlbucbts.supabase.co/storage/v1/object/public/store-resources/13809f29-0dd0-4ac2-a5cf-1285edf2ad83/1793201684563_afnan-9pm-edp-944678ed.webp" alt="Afnan 9PM" style="--rot:5deg"></figure>
+      </div>
+      <div class="card lift ficha" id="ficha">
+        <div class="f on">
+          <div class="top"><span class="pill"><i class="dot" style="--c:var(--f-aromatica)"></i>Familia aromática</span><span class="mundo">Universal, Dior</span></div>
+          <div class="nombre">Sauvage EDT</div>
+          <div class="notas">
+            <span class="nota" style="--c:var(--f-citrica)"><svg><use href="#i-citrico"/></svg>Bergamota</span>
+            <span class="nota" style="--c:var(--f-ambar)"><svg><use href="#i-especia"/></svg>Pimienta</span>
+            <span class="nota" style="--c:var(--f-aromatica)"><svg><use href="#i-hierba"/></svg>Lavanda</span>
+            <span class="nota" style="--c:var(--f-ambar)"><svg><use href="#i-ambar"/></svg>Ambroxan</span>
+            <span class="nota" style="--c:var(--f-amaderada)"><svg><use href="#i-madera"/></svg>Cedro</span>
+          </div>
+          <div class="par"><div class="th"><img src="https://aekpgsbqjzqntlbucbts.supabase.co/storage/v1/object/public/store-resources/13809f29-0dd0-4ac2-a5cf-1285edf2ad83/1793201661336_dior-sauvage-edt-7e3eff78.webp" alt=""></div><div><b>El más vendido</b><span>Lo usa medio mundo. La guía te enseña a salir de ahí sin arriesgar.</span></div></div>
+        </div>
+        <div class="f">
+          <div class="top"><span class="pill"><i class="dot" style="--c:var(--f-chipre)"></i>Familia chipre</span><span class="mundo">Nicho, Creed</span></div>
+          <div class="nombre">Aventus EDP</div>
+          <div class="notas">
+            <span class="nota" style="--c:var(--f-floral)"><svg><use href="#i-fruta"/></svg>Ananá</span>
+            <span class="nota" style="--c:var(--f-floral)"><svg><use href="#i-fruta"/></svg>Grosella negra</span>
+            <span class="nota" style="--c:var(--f-cuero)"><svg><use href="#i-humo"/></svg>Abedul</span>
+            <span class="nota" style="--c:var(--f-fresca)"><svg><use href="#i-almizcle"/></svg>Almizcle</span>
+            <span class="nota" style="--c:var(--f-chipre)"><svg><use href="#i-musgo"/></svg>Musgo de roble</span>
+          </div>
+          <div class="par"><div class="th"><img src="https://aekpgsbqjzqntlbucbts.supabase.co/storage/v1/object/public/store-resources/13809f29-0dd0-4ac2-a5cf-1285edf2ad83/1793201670680_armaf-club-de-nuit-intense-man-edt-ed6f9c56.webp" alt=""></div><div><b>Árabe parecido: Armaf Club de Nuit Intense Man <i class="tag">Muy parecido</i></b><span>8 de 17 notas en común. La comunidad lo trata como alternativa directa.</span></div></div>
+        </div>
+        <div class="f">
+          <div class="top"><span class="pill"><i class="dot" style="--c:var(--f-amaderada)"></i>Familia amaderada</span><span class="mundo">Universal, Chanel</span></div>
+          <div class="nombre">Bleu de Chanel EDP</div>
+          <div class="notas">
+            <span class="nota" style="--c:var(--f-citrica)"><svg><use href="#i-citrico"/></svg>Pomelo</span>
+            <span class="nota" style="--c:var(--f-citrica)"><svg><use href="#i-citrico"/></svg>Limón</span>
+            <span class="nota" style="--c:var(--f-cuero)"><svg><use href="#i-humo"/></svg>Incienso</span>
+            <span class="nota" style="--c:var(--f-amaderada)"><svg><use href="#i-madera"/></svg>Sándalo</span>
+            <span class="nota" style="--c:var(--f-amaderada)"><svg><use href="#i-madera"/></svg>Cedro</span>
+          </div>
+          <div class="par"><div class="th"><img src="https://aekpgsbqjzqntlbucbts.supabase.co/storage/v1/object/public/store-resources/13809f29-0dd0-4ac2-a5cf-1285edf2ad83/1793202958555_armaf-club-de-nuit-iconic-edp-2e50a6bb.webp" alt=""></div><div><b>Árabe parecido: Armaf Club de Nuit Blue Iconic <i class="tag">Parecido</i></b><span>15 de 19 notas en común. Mismo estilo, pero se nota que es otro perfume.</span></div></div>
+        </div>
+        <div class="f">
+          <div class="top"><span class="pill"><i class="dot" style="--c:var(--f-gourmand)"></i>Familia gourmand</span><span class="mundo">Árabe, Lattafa</span></div>
+          <div class="nombre">Khamrah EDP</div>
+          <div class="notas">
+            <span class="nota" style="--c:var(--f-ambar)"><svg><use href="#i-especia"/></svg>Canela</span>
+            <span class="nota" style="--c:var(--f-ambar)"><svg><use href="#i-especia"/></svg>Nuez moscada</span>
+            <span class="nota" style="--c:var(--f-floral)"><svg><use href="#i-fruta"/></svg>Dátiles</span>
+            <span class="nota" style="--c:var(--f-gourmand)"><svg><use href="#i-dulce"/></svg>Praliné</span>
+            <span class="nota" style="--c:var(--f-gourmand)"><svg><use href="#i-vainilla"/></svg>Vainilla</span>
+          </div>
+          <div class="par"><div class="th"><img src="https://aekpgsbqjzqntlbucbts.supabase.co/storage/v1/object/public/store-resources/13809f29-0dd0-4ac2-a5cf-1285edf2ad83/1793202963067_kilian-angels-share-edp-e4509a30.webp" alt=""></div><div><b>Se parece a: Kilian Angels' Share, nicho <i class="tag">Parecido</i></b><span>4 de 16 notas en común. Más dulce y denso que el original.</span></div></div>
+        </div>
+        <div class="f">
+          <div class="top"><span class="pill"><i class="dot" style="--c:var(--f-ambar)"></i>Familia ámbar</span><span class="mundo">Árabe, Afnan</span></div>
+          <div class="nombre">9PM EDP</div>
+          <div class="notas">
+            <span class="nota" style="--c:var(--f-floral)"><svg><use href="#i-fruta"/></svg>Manzana</span>
+            <span class="nota" style="--c:var(--f-ambar)"><svg><use href="#i-especia"/></svg>Canela</span>
+            <span class="nota" style="--c:var(--f-aromatica)"><svg><use href="#i-hierba"/></svg>Lavanda</span>
+            <span class="nota" style="--c:var(--f-gourmand)"><svg><use href="#i-vainilla"/></svg>Vainilla</span>
+            <span class="nota" style="--c:var(--f-gourmand)"><svg><use href="#i-dulce"/></svg>Haba tonka</span>
+          </div>
+          <div class="par"><div class="th"><img src="https://aekpgsbqjzqntlbucbts.supabase.co/storage/v1/object/public/store-resources/13809f29-0dd0-4ac2-a5cf-1285edf2ad83/1793202968217_jpg-ultra-male-edt-b0c6069f.webp" alt=""></div><div><b>Se parece a: Jean Paul Gaultier Ultra Male <i class="tag">Parecido</i></b><span>4 de 14 notas en común. Algo menos intenso; para la noche y el frío.</span></div></div>
+        </div>
+      </div>
+      <div class="thumbs" id="thumbs" aria-label="Elegir perfume">
+        <button class="on" type="button" aria-label="Dior Sauvage"><img src="https://aekpgsbqjzqntlbucbts.supabase.co/storage/v1/object/public/store-resources/13809f29-0dd0-4ac2-a5cf-1285edf2ad83/1793201661336_dior-sauvage-edt-7e3eff78.webp" alt=""><i></i></button>
+        <button type="button" aria-label="Creed Aventus"><img src="https://aekpgsbqjzqntlbucbts.supabase.co/storage/v1/object/public/store-resources/13809f29-0dd0-4ac2-a5cf-1285edf2ad83/1793201665869_creed-aventus-edp-59fc8e6d.webp" alt=""><i></i></button>
+        <button type="button" aria-label="Bleu de Chanel"><img src="https://aekpgsbqjzqntlbucbts.supabase.co/storage/v1/object/public/store-resources/13809f29-0dd0-4ac2-a5cf-1285edf2ad83/1793201675511_chanel-bleu-de-chanel-edp-21d04f44.webp" alt=""><i></i></button>
+        <button type="button" aria-label="Lattafa Khamrah"><img src="https://aekpgsbqjzqntlbucbts.supabase.co/storage/v1/object/public/store-resources/13809f29-0dd0-4ac2-a5cf-1285edf2ad83/1793201679843_lattafa-khamrah-edp-635633eb.webp" alt=""><i></i></button>
+        <button type="button" aria-label="Afnan 9PM"><img src="https://aekpgsbqjzqntlbucbts.supabase.co/storage/v1/object/public/store-resources/13809f29-0dd0-4ac2-a5cf-1285edf2ad83/1793201684563_afnan-9pm-edp-944678ed.webp" alt=""><i></i></button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Franja de familias -->
+<div class="franja" aria-hidden="true">
+  <div class="track">
+    <span class="fam"><img class="ico" src="https://aekpgsbqjzqntlbucbts.supabase.co/storage/v1/object/public/store-resources/13809f29-0dd0-4ac2-a5cf-1285edf2ad83/1793223453360_ico-citrica-18dbadcb.webp" alt="">Cítrica</span>
+    <span class="fam"><img class="ico" src="https://aekpgsbqjzqntlbucbts.supabase.co/storage/v1/object/public/store-resources/13809f29-0dd0-4ac2-a5cf-1285edf2ad83/1793223457580_ico-fresca-494f2b61.webp" alt="">Fresca</span>
+    <span class="fam"><img class="ico" src="https://aekpgsbqjzqntlbucbts.supabase.co/storage/v1/object/public/store-resources/13809f29-0dd0-4ac2-a5cf-1285edf2ad83/1793223461634_ico-aromatica-1a2c1ab4.webp" alt="">Aromática</span>
+    <span class="fam"><img class="ico" src="https://aekpgsbqjzqntlbucbts.supabase.co/storage/v1/object/public/store-resources/13809f29-0dd0-4ac2-a5cf-1285edf2ad83/1793223465938_ico-floral-c12c2b7b.webp" alt="">Floral</span>
+    <span class="fam"><img class="ico" src="https://aekpgsbqjzqntlbucbts.supabase.co/storage/v1/object/public/store-resources/13809f29-0dd0-4ac2-a5cf-1285edf2ad83/1793223470250_ico-chipre-ea5726f7.webp" alt="">Chipre</span>
+    <span class="fam"><img class="ico" src="https://aekpgsbqjzqntlbucbts.supabase.co/storage/v1/object/public/store-resources/13809f29-0dd0-4ac2-a5cf-1285edf2ad83/1793223474655_ico-amaderada-5443e0ee.webp" alt="">Amaderada</span>
+    <span class="fam"><img class="ico" src="https://aekpgsbqjzqntlbucbts.supabase.co/storage/v1/object/public/store-resources/13809f29-0dd0-4ac2-a5cf-1285edf2ad83/1793223478820_ico-ambar-272b68d6.webp" alt="">Ámbar</span>
+    <span class="fam"><img class="ico" src="https://aekpgsbqjzqntlbucbts.supabase.co/storage/v1/object/public/store-resources/13809f29-0dd0-4ac2-a5cf-1285edf2ad83/1793223483203_ico-gourmand-5940f78f.webp" alt="">Gourmand</span>
+    <span class="fam"><img class="ico" src="https://aekpgsbqjzqntlbucbts.supabase.co/storage/v1/object/public/store-resources/13809f29-0dd0-4ac2-a5cf-1285edf2ad83/1793223487656_ico-cuero-4a782677.webp" alt="">Cuero</span>
+    <span class="fam"><img class="ico" src="https://aekpgsbqjzqntlbucbts.supabase.co/storage/v1/object/public/store-resources/13809f29-0dd0-4ac2-a5cf-1285edf2ad83/1793223453360_ico-citrica-18dbadcb.webp" alt="">Cítrica</span>
+    <span class="fam"><img class="ico" src="https://aekpgsbqjzqntlbucbts.supabase.co/storage/v1/object/public/store-resources/13809f29-0dd0-4ac2-a5cf-1285edf2ad83/1793223457580_ico-fresca-494f2b61.webp" alt="">Fresca</span>
+    <span class="fam"><img class="ico" src="https://aekpgsbqjzqntlbucbts.supabase.co/storage/v1/object/public/store-resources/13809f29-0dd0-4ac2-a5cf-1285edf2ad83/1793223461634_ico-aromatica-1a2c1ab4.webp" alt="">Aromática</span>
+    <span class="fam"><img class="ico" src="https://aekpgsbqjzqntlbucbts.supabase.co/storage/v1/object/public/store-resources/13809f29-0dd0-4ac2-a5cf-1285edf2ad83/1793223465938_ico-floral-c12c2b7b.webp" alt="">Floral</span>
+    <span class="fam"><img class="ico" src="https://aekpgsbqjzqntlbucbts.supabase.co/storage/v1/object/public/store-resources/13809f29-0dd0-4ac2-a5cf-1285edf2ad83/1793223470250_ico-chipre-ea5726f7.webp" alt="">Chipre</span>
+    <span class="fam"><img class="ico" src="https://aekpgsbqjzqntlbucbts.supabase.co/storage/v1/object/public/store-resources/13809f29-0dd0-4ac2-a5cf-1285edf2ad83/1793223474655_ico-amaderada-5443e0ee.webp" alt="">Amaderada</span>
+    <span class="fam"><img class="ico" src="https://aekpgsbqjzqntlbucbts.supabase.co/storage/v1/object/public/store-resources/13809f29-0dd0-4ac2-a5cf-1285edf2ad83/1793223478820_ico-ambar-272b68d6.webp" alt="">Ámbar</span>
+    <span class="fam"><img class="ico" src="https://aekpgsbqjzqntlbucbts.supabase.co/storage/v1/object/public/store-resources/13809f29-0dd0-4ac2-a5cf-1285edf2ad83/1793223483203_ico-gourmand-5940f78f.webp" alt="">Gourmand</span>
+    <span class="fam"><img class="ico" src="https://aekpgsbqjzqntlbucbts.supabase.co/storage/v1/object/public/store-resources/13809f29-0dd0-4ac2-a5cf-1285edf2ad83/1793223487656_ico-cuero-4a782677.webp" alt="">Cuero</span>
+  </div>
+</div>
+
+<!-- 2. Dolores -->
+<section id="dolores">
+  <div class="wrap">
+    <div class="head rv">
+      <span class="label">Lo que pasa</span>
+      <h2>¿Te pasa alguna de <em>estas</em>?</h2>
+    </div>
+    <div class="dolores">
+      <div class="card hover dolor rv d1"><div class="mark"></div><div class="q">Nadie me pregunta qué uso.</div><p>Te pones perfume todos los días y nunca llega el "qué bien hueles".</p></div>
+      <div class="card hover dolor rv d2"><div class="mark"></div><div class="q">No me dura casi nada, 3 horas.</div><p>A la tarde ya no queda nada para que los demás sientan.</p></div>
+      <div class="card hover dolor rv d3"><div class="mark"></div><div class="q">Uso el mismo perfume que medio mundo.</div><p>Entras a un lugar y hueles igual que otras tres personas.</p></div>
+      <div class="card hover dolor rv d4"><div class="mark"></div><div class="q">En la tienda olía increíble. En casa, otra cosa.</div><p>Compraste por los primeros minutos. Eso es lo primero que se va.</p></div>
+    </div>
+    <div class="cierre rv">
+      <div class="q">Un perfume bien elegido habla antes que tú. Y se queda cuando te vas.</div>
+      <p class="sub">Elegirlo bien se aprende, y esta guía te muestra cómo.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 3. Beneficios -->
+<section id="beneficios">
+  <div class="wrap">
+    <div class="head rv">
+      <span class="label">Lo que cambia</span>
+      <h2>Lo que pasa cuando eliges <em>bien</em></h2>
+    </div>
+    <div class="benef">
+      <div class="card lift hover rv d1"><span class="n">1</span><h3>Te lo notan</h3><p>Eliges por el fondo, lo que queda en la piel a la noche, y no por los primeros minutos en la tienda.</p></div>
+      <div class="card lift hover rv d2"><span class="n">2</span><h3>Hueles distinto</h3><p>Conoces las nueve familias y sales de los "azules" que usa todo el mundo, sin arriesgar plata.</p></div>
+      <div class="card lift hover rv d3"><span class="n">3</span><h3>Aciertas al comprar</h3><p>Lees la ficha de un perfume y sabes si te va a gustar y cuánto va a durar. Sin compras a ciegas ni falsos.</p></div>
+      <div class="card lift hover rv d4"><span class="n">4</span><h3>Tienes tu armario de 3</h3><p>Uno diario, uno versátil y uno para una ocasión, con opciones de los tres mundos y para tu presupuesto.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 4. Producto -->
+<section id="producto">
+  <div class="wrap">
+    <div class="head rv">
+      <span class="label">Lo que recibes</span>
+      <h2>Un método visual que se lee en el <em>celular</em></h2>
+      <p class="sub">64 páginas con frascos reales y una sola idea por página. Más hojas para imprimir en A4.</p>
+    </div>
+  </div>
+  <div class="galeria rv" aria-hidden="true">
+    <div class="row">
+      <div class="pag" style="--r:-2deg"><img src="https://aekpgsbqjzqntlbucbts.supabase.co/storage/v1/object/public/store-resources/13809f29-0dd0-4ac2-a5cf-1285edf2ad83/1793223368196_pag-1-velado-eda4a858.webp" alt=""></div>
+      <div class="pag" style="--r:1.5deg"><img src="https://aekpgsbqjzqntlbucbts.supabase.co/storage/v1/object/public/store-resources/13809f29-0dd0-4ac2-a5cf-1285edf2ad83/1793223372519_pag-2-velado-5aca31f5.webp" alt=""></div>
+      <div class="pag" style="--r:-1deg"><img src="https://aekpgsbqjzqntlbucbts.supabase.co/storage/v1/object/public/store-resources/13809f29-0dd0-4ac2-a5cf-1285edf2ad83/1793223376658_pag-3-velado-262dee68.webp" alt=""></div>
+      <div class="pag" style="--r:2deg"><img src="https://aekpgsbqjzqntlbucbts.supabase.co/storage/v1/object/public/store-resources/13809f29-0dd0-4ac2-a5cf-1285edf2ad83/1793223381411_pag-4-velado-f3955a9f.webp" alt=""></div>
+      <div class="pag" style="--r:-1.5deg"><img src="https://aekpgsbqjzqntlbucbts.supabase.co/storage/v1/object/public/store-resources/13809f29-0dd0-4ac2-a5cf-1285edf2ad83/1793223385484_pag-5-velado-6dfa1713.webp" alt=""></div>
+    </div>
+    <div class="row r">
+      <div class="pag" style="--r:1deg"><img src="https://aekpgsbqjzqntlbucbts.supabase.co/storage/v1/object/public/store-resources/13809f29-0dd0-4ac2-a5cf-1285edf2ad83/1793223389559_pag-6-velado-17bd7ef1.webp" alt=""></div>
+      <div class="pag" style="--r:-2deg"><img src="https://aekpgsbqjzqntlbucbts.supabase.co/storage/v1/object/public/store-resources/13809f29-0dd0-4ac2-a5cf-1285edf2ad83/1793223394626_pag-7-velado-9d106061.webp" alt=""></div>
+      <div class="pag" style="--r:1.5deg"><img src="https://aekpgsbqjzqntlbucbts.supabase.co/storage/v1/object/public/store-resources/13809f29-0dd0-4ac2-a5cf-1285edf2ad83/1793223399147_pag-8-velado-6edfb75b.webp" alt=""></div>
+      <div class="pag" style="--r:-1deg"><img src="https://aekpgsbqjzqntlbucbts.supabase.co/storage/v1/object/public/store-resources/13809f29-0dd0-4ac2-a5cf-1285edf2ad83/1793223403558_pag-9-velado-033cfbfd.webp" alt=""></div>
+      <div class="pag" style="--r:2deg"><img src="https://aekpgsbqjzqntlbucbts.supabase.co/storage/v1/object/public/store-resources/13809f29-0dd0-4ac2-a5cf-1285edf2ad83/1793223407797_pag-10-velado-24b6e69d.webp" alt=""></div>
+    </div>
+  </div>
+  <div class="wrap">
+    <div class="caps">
+      <div class="card flat cap rv d1"><span class="num">1</span><div><b>Lo básico</b><span>Por qué tu perfume desaparece a las 3 horas y los 3 arreglos para que dure.</span></div></div>
+      <div class="card flat cap rv d2"><span class="num">2</span><div><b>Las familias</b><span>Cómo saber si un perfume te va a gustar antes de comprarlo.</span></div></div>
+      <div class="card flat cap rv d3"><span class="num">3</span><div><b>Diccionario de notas</b><span>Las 54 notas que vas a leer en cualquier perfume, con algo de tu cocina.</span></div></div>
+      <div class="card flat cap rv d4"><span class="num">4</span><div><b>Entrena tu nariz</b><span>Diez minutos por día con cosas que ya tienes en casa.</span></div></div>
+      <div class="card flat cap rv d1"><span class="num">5</span><div><b>Los tres mundos</b><span>Cuándo vale la pena pagar más y cuándo un árabe hace el mismo trabajo.</span></div></div>
+      <div class="card flat cap rv d2"><span class="num">6</span><div><b>Tu perfume</b><span>Seis preguntas para encontrar tu estilo y tus 3 perfumes.</span></div></div>
+      <div class="card flat cap rv d3"><span class="num">7</span><div><b>Comprar sin errores</b><span>Cómo probar, decants y las seis señales de un falso.</span></div></div>
+      <div class="card flat cap rv d4"><span class="num" style="color:var(--ink-3)">+</span><div><b>Fuentes</b><span>De dónde sale cada dato. Nada está inventado.</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- 5. Bonos -->
+<section id="bonos">
+  <div class="wrap">
+    <div class="head rv">
+      <span class="label">De regalo</span>
+      <h2>Dos bonos que te ahorran <em>plata</em></h2>
+    </div>
+    <div class="bonos">
+      <div class="card lift bono rv d1">
+        <div class="vis" aria-hidden="true">
+          <img src="https://aekpgsbqjzqntlbucbts.supabase.co/storage/v1/object/public/store-resources/13809f29-0dd0-4ac2-a5cf-1285edf2ad83/1793201684563_afnan-9pm-edp-944678ed.webp" alt="" style="left:20%;bottom:-18px;transform:rotate(-8deg)">
+          <img src="https://aekpgsbqjzqntlbucbts.supabase.co/storage/v1/object/public/store-resources/13809f29-0dd0-4ac2-a5cf-1285edf2ad83/1793201689424_rabanne-1-million-edt-eab00a9a.webp" alt="" style="right:20%;bottom:-22px;transform:rotate(7deg)">
+        </div>
+        <div class="txt">
+          <div class="top"><span class="pill gold">Bono 1</span><span class="gratis">Gratis <s>US$ 19</s></span></div>
+          <h3>Lo que dice la gente <em>común</em></h3>
+          <p>Cuánto dura de verdad cada perfume y cuáles traen cumplidos, según cientos de opiniones reales de gente que lo usa. Más de 30 perfumes, con sus citas y sus fuentes.</p>
+        </div>
+      </div>
+      <div class="card lift bono rv d2">
+        <div class="vis" aria-hidden="true">
+          <img src="https://aekpgsbqjzqntlbucbts.supabase.co/storage/v1/object/public/store-resources/13809f29-0dd0-4ac2-a5cf-1285edf2ad83/1793201670680_armaf-club-de-nuit-intense-man-edt-ed6f9c56.webp" alt="" style="left:16%;bottom:-18px;transform:rotate(-7deg)">
+          <span class="eq">≈</span>
+          <img src="https://aekpgsbqjzqntlbucbts.supabase.co/storage/v1/object/public/store-resources/13809f29-0dd0-4ac2-a5cf-1285edf2ad83/1793201665869_creed-aventus-edp-59fc8e6d.webp" alt="" style="right:16%;bottom:-22px;transform:rotate(7deg)">
+        </div>
+        <div class="txt">
+          <div class="top"><span class="pill gold">Bono 2</span><span class="gratis">Gratis <s>US$ 19</s></span></div>
+          <h3>Huele a caro, cuesta <em>poco</em></h3>
+          <p>Los árabes que más se parecen a los originales, según la gente que probó los dos: muy parecido, parecido o aire de familia, y dónde se nota la diferencia.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 6. Oferta -->
+<section id="oferta">
+  <div class="wrap">
+    <div class="head rv">
+      <span class="label">La oferta</span>
+      <h2>Todo esto, por el precio de un <em>decant</em></h2>
+    </div>
+    <div class="oferta">
+      <div class="card lista rv d1">
+        <div class="fila"><div><b>¿Qué perfume usas?</b><span>La guía completa más las hojas para imprimir</span></div><div class="pr"><s>{{original_price}}</s><em>{{price}}</em></div></div>
+        <div class="fila"><div><b>Bono 1: Lo que dice la gente común</b></div><div class="pr"><s>US$ 19</s><em>Gratis</em></div></div>
+        <div class="fila"><div><b>Bono 2: Huele a caro, cuesta poco</b></div><div class="pr"><s>US$ 19</s><em>Gratis</em></div></div>
+        <div class="total"><div><span class="label">Hoy pagas solo la guía</span></div><div><s>US$ 77</s> &nbsp;<span class="num">{{price}}</span></div></div>
+      </div>
+      <div class="card lift pago rv d2">
+        <div class="ring" aria-hidden="true"></div>
+        <span class="label">Precio de lanzamiento</span>
+        <div class="big">{{price}}</div>
+        <div class="tach"><s>{{original_price}}</s> &nbsp;pago único</div>
+        <a class="btn" href="/checkout">Quiero la guía por {{price}} <span class="arr">→</span></a>
+        <ul>
+          <li>Lo recibes por email en minutos</li>
+          <li>Se lee en el celular, sin aplicaciones</li>
+          <li>Pagas en tu moneda, con tarjeta</li>
+          <li>7 días de garantía</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 7 y 8. Fuentes y garantía -->
+<section id="confianza">
+  <div class="wrap">
+    <div class="confianza">
+      <div class="card rv d1">
+        <span class="label">Por qué confiar</span>
+        <h3 style="margin-top:8px">Cada dato tiene <em>fuente</em></h3>
+        <p class="small" style="margin-top:8px">La guía cruza lo que enseñan las escuelas de perfumería con lo que vota y comenta la gente que usa cada perfume. Un dato entra solo si aparece en tres fuentes distintas.</p>
+        <div class="logos" aria-label="Fuentes consultadas"><span>Fragrantica</span><span>Parfumo</span><span>Reddit</span><span>Mercado Libre</span><span>YouTube</span><span>Basenotes</span></div>
+      </div>
+      <div class="card note gar rv d2">
+        <div class="sello" aria-hidden="true"><div><b>7</b><span>días de garantía</span></div></div>
+        <div>
+          <h3>Si no te sirve, te devolvemos la <em>plata</em></h3>
+          <p class="small" style="margin-top:8px">Lees la guía con calma. Si en 7 días sientes que no te ayudó a elegir mejor, escribes un mensaje y se te devuelve el pago. Sin preguntas.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 9. Preguntas -->
+<section id="preguntas">
+  <div class="wrap">
+    <div class="head rv">
+      <span class="label">Dudas</span>
+      <h2>Preguntas <em>frecuentes</em></h2>
+    </div>
+    <div class="faq rv">
+      <details><summary>¿Sirve si no sé nada de perfumes?<i>+</i></summary><p>Sí. Está pensada para empezar de cero. Cada idea tiene un ejemplo de tu cocina o de un perfume conocido.</p></details>
+      <details><summary>¿Necesito comprar perfumes para practicar?<i>+</i></summary><p>No. El entrenamiento de la nariz se hace con cosas que ya tienes en casa: café, limón, canela, pimienta.</p></details>
+      <details><summary>¿Habla de perfumes árabes?<i>+</i></summary><p>Sí, a fondo. Qué son, qué es el oud y cuáles se parecen de verdad a los perfumes caros. El bono 2 es solo de eso.</p></details>
+      <details><summary>¿Cómo lo recibo y cómo pago?<i>+</i></summary><p>Pagas con tarjeta, en tu moneda, una sola vez. Te llega un email con el enlace para descargar los PDF: la guía, los dos bonos y las hojas para imprimir.</p></details>
+      <details><summary>¿Hay una versión para mujeres?<i>+</i></summary><p>Esta es la edición hombres. La edición mujeres está en preparación y se va a avisar por email a quienes compren esta.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- 10. Botón final -->
+<section class="final">
+  <div class="wrap">
+    <div class="scene2 rv" aria-hidden="true">
+      <div class="glow"></div>
+      <img class="frasco a" src="https://aekpgsbqjzqntlbucbts.supabase.co/storage/v1/object/public/store-resources/13809f29-0dd0-4ac2-a5cf-1285edf2ad83/1793201675511_chanel-bleu-de-chanel-edp-21d04f44.webp" alt="">
+      <img class="frasco b" src="https://aekpgsbqjzqntlbucbts.supabase.co/storage/v1/object/public/store-resources/13809f29-0dd0-4ac2-a5cf-1285edf2ad83/1793201661336_dior-sauvage-edt-7e3eff78.webp" alt="">
+      <img class="frasco c" src="https://aekpgsbqjzqntlbucbts.supabase.co/storage/v1/object/public/store-resources/13809f29-0dd0-4ac2-a5cf-1285edf2ad83/1793201679843_lattafa-khamrah-edp-635633eb.webp" alt="">
+    </div>
+    <h2 class="rv">Que la próxima vez te pregunten qué <em>usas</em></h2>
+    <p class="sub rv d1" style="text-align:center">La guía, los dos bonos y las hojas para imprimir por {{price}} en vez de US$ 77. Pago único, con 7 días de garantía.</p>
+    <div class="cta rv d2">
+      <a class="btn" href="/checkout">Quiero la guía por {{price}} <span class="arr">→</span></a>
+    </div>
+    <p class="micro rv d3" style="margin-top:12px">Lo recibes por email en minutos.</p>
+  </div>
+  <div class="wrap">
+    <div class="pie">
+      <span>¿Qué perfume usas?, edición hombres. Los frascos de marca se muestran como referencia.</span>
+      <span>{{legal_footer}}</span>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<div class="sticky" id="sticky">
+  <div class="in">
+    <div class="p"><b>{{price}}</b><s>{{original_price}}</s><span>guía + 2 bonos</span></div>
+    <a class="btn" href="/checkout">Comprar la guía</a>
+  </div>
+</div>
+
+<script>
+(function(){
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  // Aparición al hacer scroll
+  var io = new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } }); }, {rootMargin:'0px 0px -8% 0px', threshold:.12});
+  document.querySelectorAll('.rv').forEach(function(el){ io.observe(el); });
+  // Carrusel infinito de páginas: se duplica la fila
+  document.querySelectorAll('.galeria .row').forEach(function(r){ Array.prototype.slice.call(r.children).forEach(function(c){ r.appendChild(c.cloneNode(true)); }); });
+  // Barra fija después del hero
+  var hero = document.querySelector('.hero'), bar = document.getElementById('sticky');
+  var so = new IntersectionObserver(function(es){ bar.classList.toggle('on', !es[0].isIntersecting); }, {threshold:0});
+  so.observe(hero);
+  // Carrusel del hero: cambia el frasco y su ficha cada 5 segundos; los frascos chicos lo controlan
+  var slides = document.querySelectorAll('.stage .slide'), fichas = document.querySelectorAll('#ficha .f'), thumbs = document.querySelectorAll('#thumbs button'), ghost = document.getElementById('ghost');
+  var i = 0, timer = null, DUR = 5000;
+  function show(n){
+    i = (n + slides.length) % slides.length;
+    slides.forEach(function(s, k){ s.classList.toggle('on', k === i); });
+    fichas.forEach(function(f, k){ f.classList.toggle('on', k === i); });
+    thumbs.forEach(function(t, k){ t.classList.toggle('on', k === i); });
+    ghost.textContent = '0' + (i + 1);
+  }
+  function play(){ if(reduce) return; stop(); timer = setInterval(function(){ show(i + 1); }, DUR); }
+  function stop(){ if(timer){ clearInterval(timer); timer = null; } }
+  thumbs.forEach(function(t, k){ t.addEventListener('click', function(){ show(k); play(); }); });
+  var scene = document.getElementById('scene');
+  scene.addEventListener('mouseenter', stop); scene.addEventListener('mouseleave', play);
+  document.addEventListener('visibilitychange', function(){ document.hidden ? stop() : play(); });
+  play();
+})();
+</script>
+</body>
+</html>
